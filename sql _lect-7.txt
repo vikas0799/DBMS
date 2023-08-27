@@ -1,0 +1,61 @@
+use chitkara;
+drop table Persons;
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (ID)
+);
+insert into persons values(16,'patel',null,25);
+select * from persons;
+
+
+use chitkara;
+ALTER TABLE Persons
+ADD  Email varchar(244);
+desc Persons;
+select * from Persons;
+
+
+UPDATE Persons
+SET Email='johnwick@gmail.com',age=12
+WHERE ID>10;
+
+select * from Persons;
+
+
+
+
+select * from persons;
+use chitkara;
+show tables;
+select * from student;
+insert into student values (997,'yashika',19,'chandigarh','yashika@gmail.com');
+
+use bank;
+show tables;
+select * from sbi;
+delete from sbi;
+insert into sbi values ('vikas',988,25,'john@gmail.com');
+truncate table sbi;
+
+
+
+CREATE TABLE Person (
+    Personid int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+);
+INSERT INTO Person (FirstName,LastName)
+VALUES ('Lars','Monsen');
+select * from person;
+
+
+
+
+
+
+

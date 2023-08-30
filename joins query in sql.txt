@@ -1,0 +1,11 @@
+ select teacher.name,student.sname,teacher.course 
+from teacher inner join student on
+ student.subject=teacher.course;
++--------+-----------+--------+
+ select teacher.name,student.sname,teacher.course 
+from teacher left join student on 
+student.subject=teacher.course 
+ union 
+ select teacher.name,student.sname,teacher.course
+ from teacher  right join student on 
+student.subject=teacher.course;

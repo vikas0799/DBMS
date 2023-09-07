@@ -1,0 +1,1 @@
+create table student(roll int,name varchar(30));

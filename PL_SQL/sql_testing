@@ -1,0 +1,33 @@
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Error starting at line : 28 in command -
+      dbms_output.put_line('Student: ' || names(i) || '
+Error report -
+Unknown Command
+
+
+Error starting at line : 29 in command -
+      Marks: ' || marks(i))
+Error report -
+Unknown Command
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+

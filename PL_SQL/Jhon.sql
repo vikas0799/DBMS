@@ -1,0 +1,11 @@
+--show user;
+--show tables;
+--create table student(
+--roll int,
+--name varchar(23)
+--);
+--desc student;
+--
+--insert into student values(23,'vikas');
+select * from student;
+--show tables;

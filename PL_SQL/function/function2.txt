@@ -1,0 +1,16 @@
+create or replace function sumage1
+return integer
+is
+  ans integer;
+begin
+select count(age) into ans from student;
+return ans;
+end;
+
+set serveroutput on
+declare
+result integer;
+begin
+result :=sumage1();
+dbms_output.put_line(result);
+end;

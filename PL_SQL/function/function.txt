@@ -1,0 +1,37 @@
+set SERVEROUTPUT on
+
+declare
+output integer;
+
+begin
+output :=squre_number(7);
+dbms_output.put_line(output);
+end;
+
+create or replace function SUM1
+  return integer
+  is 
+  ans integer:=90;
+  
+  begin
+  
+  return ans;
+  end;
+
+
+
+set SERVEROUTPUT on
+
+declare
+out integer;
+
+begin
+out:=SUM1();
+dbms_output.put_line(out);
+end;
+
+
+
+
+select COUNT(age) FROM student;
+

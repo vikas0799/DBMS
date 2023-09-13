@@ -1,0 +1,45 @@
+
+set SERVEROUTPUT on
+DECLARE
+d_age integer;
+d_naam varchar(59);
+roll int;
+BEGIN
+SELECT age, name ,rollno INTO d_age,d_naam,roll FROM student 
+WHERE rollno = 3863;
+if sql%found then
+dbms_output.put_line(d_age||d_naam||roll);
+else
+
+END;
+
+
+
+
+set SERVEROUTPUT on
+DECLARE
+st_name student.name%type;
+st_age  student.age%type;
+CURSOR st_student is select  name , age from student where age<28;
+begin
+open st_student;
+loop 
+fetch st_student into st_name,st_age;
+ exit when st_student%notfound;
+ dbms_output.put_line(st_name||'  '||st_age);
+end loop;
+CLOSE st_student; 
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+

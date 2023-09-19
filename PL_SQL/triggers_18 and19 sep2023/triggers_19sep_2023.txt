@@ -1,0 +1,154 @@
+create or replace trigger john
+before  update on employee
+
+for each row
+when (new.id>7)
+begin
+dbms_output.put_line(:old.salary);
+dbms_output.put_line(:old.id);
+dbms_output.put_line(:old.name);
+
+dbms_output.put_line(:new.salary);
+dbms_output.put_line(:new.name);
+dbms_output.put_line(:new.id);
+dbms_output.put_line('data updated in employee table');
+end;
+
+
+
+1	John Doe	56100
+2	Jane Smith	65100
+3	Bob Johnson	61100
+4	vikas	66100
+8	jatin	14500
+9	lakshaya	4000
+10	bhumi	7000
+7	rohit	13500
+
+
+set serveroutput on
+begin
+update employee
+set salary =salary-1000;
+end;
+
+
+create or replace trigger display_changes
+after update on employee
+
+for each row
+begin
+dbms_output.put_line(:old.id);
+dbms_output.put_line(:old.name);
+dbms_output.put_line(:old.salary);
+
+dbms_output.put_line(:new.salary);
+dbms_output.put_line(:new.id);
+dbms_output.put_line(:new.name);
+dbms_output.put_line('new employee updated in database');
+end;
+
+
+
+create or replace trigger display_changes
+after update on employee
+
+for each row
+begin
+dbms_output.put_line(:old.id);
+dbms_output.put_line(:old.name);
+dbms_output.put_line(:old.salary);
+
+dbms_output.put_line(:new.salary);
+dbms_output.put_line('new employee updated in database');
+end;
+
+
+
+
+set SERVEROUTPUT on
+declare
+
+begin
+update employee 
+set salary=salary+2000
+where id=8;
+end;
+
+
+
+CREATE OR REPLACE TRIGGER display_salary 
+--BEFORE UPDATE ON employee 
+--for each row
+--BEGIN 
+--dbms_output.put_line(:old.salary);
+--dbms_output.put_line(:old.id);
+--dbms_output.put_line(:old.name);
+--
+--dbms_output.put_line(:new.salary);
+--dbms_output.put_line(:new.name);
+--dbms_output.put_line(:new.id);
+--
+--   dbms_output.put_line('salary updated');
+--END; 
+--
+
+
+
+
+set SERVEROUTPUT on
+begin
+UPDATE employee 
+set salary=salary+500
+where id=7;
+end;
+
+
+create or replace trigger display_age_changes
+ before insert or update on student
+
+for each row
+when (new.age>=40)
+declare
+x integer;
+begin
+
+if :new.age>=40 then
+dbms_output.put_line('adult student data inserted or updated ');
+end if;
+
+--dbms_output.put_line(:old.age||' '||:new.age||' '||:new.age-:old.age);
+end;
+
+
+
+select * from employee;
+CREATE OR REPLACE TRIGGER display_salary_changes 
+BEFORE DELETE OR INSERT OR UPDATE ON employee 
+FOR EACH ROW 
+WHEN (NEW.ID > 3) 
+DECLARE 
+   sal_diff number; 
+BEGIN 
+   dbms_output.put_line('update ya delete ya insert kiya hoga');
+   sal_diff := :NEW.salary  - :OLD.salary; 
+   dbms_output.put_line('Old salary: ' || :OLD.salary); 
+   dbms_output.put_line('New salary: ' || :NEW.salary); 
+   dbms_output.put_line('Salary difference: ' || sal_diff); 
+END; 
+
+
+
+
+
+--set SERVEROUTPUT on
+--insert into employee values(5,'vikas',3900);
+--update employee 
+--set salary=salary+100;
+
+--delete from employee where id=5;
+
+
+
+set SERVEROUTPUT on
+insert into employee values(7,'rohit',4000);

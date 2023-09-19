@@ -1,0 +1,10 @@
+
+set serveroutput on
+
+declare
+
+begin
+dbms_output.put_line('print_student procedure calling');
+print(7);
+print_student(2777);
+end;

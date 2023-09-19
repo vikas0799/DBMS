@@ -1,0 +1,10 @@
+create or replace procedure print(n integer)
+-- return integer
+ is
+ ans integer;
+ 
+ begin
+ ans :=n*n;
+ dbms_output.put_line(ans);
+-- return ans;
+ end;

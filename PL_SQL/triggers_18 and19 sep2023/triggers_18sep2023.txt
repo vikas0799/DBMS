@@ -1,0 +1,28 @@
+--select * from student;
+create or replace trigger display_massage
+after update  on student
+
+declare
+
+begin
+dbms_output.put_line('data inserted');
+end;
+
+***************************************************************
+create or replace trigger display_massage
+after update  on student
+
+for each row
+begin
+dbms_output.put_line(:old.age||'  '||:new.age);
+dbms_output.put_line('updating query run');
+end;
+
+
+set SERVEROUTPUT on
+
+begin
+update student
+set age=age+10;
+
+end;

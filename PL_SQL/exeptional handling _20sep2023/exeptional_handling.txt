@@ -1,0 +1,16 @@
+set SERVEROUTPUT on
+DECLARE   
+   c_name  employee.name%type;  
+   c_salary integer;  
+BEGIN  
+   SELECT  name, salary INTO  c_name, c_salary 
+   FROM employee  
+   WHERE id =400;  
+DBMS_OUTPUT.PUT_LINE ('Name: '||  c_name);  
+ DBMS_OUTPUT.PUT_LINE ('salary: ' || c_salary);  
+--EXCEPTION  
+--   WHEN no_data_found THEN  
+--      dbms_output.put_line('No such emloyee!');  
+--   WHEN others THEN  
+--      dbms_output.put_line('Error!');  
+END;  

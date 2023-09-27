@@ -1,0 +1,26 @@
+select * from employee;
+
+1	John Doe	55100
+2	Jane Smith	64100
+3	Bob Johnson	60100
+4	vikas	65100
+8	jatin	13500
+9	lakshaya	3000
+10	bhumi	6000
+12	null	null
+7	rohit	12500
+12	vikas	null
+12	23	23
+12	23	23
+13	23	23
+
+
+
+insert into employee values('ABC','vikas',500);
+
+
+
+
+
+set SERVEROUTPUT on
+select * from employee where id=100;
